@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mathilde AI – ViniSystems</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
+<style>
+:root {
+    --header-bg: #ECECEC;
+    --text-color: #000000;
+    --physical-bg: #FFF8E1; 
+    --btn-bg: #ECECEC;
+    --btn-hover: #DADADA;
+    --shadow-color: rgba(0,0,0,0.15);
+}
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--physical-bg);
+    color: var(--text-color);
+}
+a { text-decoration: none; color: inherit; }
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--header-bg);
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+.left-header-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+/* --- Style du Menu Déroulant --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Bouton Menu Burger (4 traits) */
+.dropbtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+}
+
+.dropbtn .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+/* Contenu du menu (caché par défaut) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 140%;
+    left: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    font-size: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    color: #990000;
+}
+
+.show {
+    display: block;
+}
+
+.menu-links a { margin-left: 15px; font-weight: bold; }
+.menu-links a:hover { color: #990000; }
+.flags img { width: 30px; margin-right: 10px; }
+.section-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+    /* ===== CONTENU ===== */
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+.text-block {
+    flex: 1;
+    font-size: 18px;
+    line-height: 1.7;
+}
+.text-block i {
+    font-style: italic;
+}
+.video-block {
+    width: 40%;
+}
+.video-block video {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 18px;
+    background-color: var(--btn-bg);
+    border-radius: 8px;
+    border: 1px solid #bbb;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+.btn:hover {
+    background-color: var(--btn-hover);
+    transform: translateY(-3px);
+}
+    
+/* ===== PIED DE PAGE ===== */
+ footer {
+        background-color: var(--header-bg);
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+        box-shadow: 0 -4px 10px var(--shadow-color);
+    }
+    footer a {
+    margin: 0 10px;
+    color: #333;
+    transition: color 0.3s;
+}
+    
+    footer a:hover {
+    color: #990000;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+
+    .section-container {
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+    .content {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 25px !important;
+    }
+
+    .text-block,
+    .video-block {
+        width: 100% !important;
+    }
+
+    .btn {
+        width: 100% !important;
+        text-align: center !important;
+        box-sizing: border-box;
+    }
+
+    body, html {
+        overflow-x: hidden !important;
+    }
+}
+
+    
+</style>
+</head>
+<body>
+    
+<div class="menu-container">
+<div class="left-header-group">
+<div class="dropdown">
+    <button onclick="toggleMenu()" class="dropbtn" aria-label="Menu principal">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <div id="myDropdown" class="dropdown-content">
+        <a href="consulting-en.html">Consulting</a>
+        <a href="artificial-en.html">Mathilde AI</a>
+        <a href="softwares-en.html">Softwares</a>
+        <a href="tubprotect-en.html">TubProtect</a>
+    </div>
+</div>
+
+    <div class="flags">
+    <a href="artificial.html"><img src="images/fr.png" alt="FR"></a>
+    <a href="artificial-en.html"><img src="images/en.png" alt="EN"></a>
+    <a href="artificial-es.html"><img src="images/es.png" alt="ES"></a>
+</div>
+
+</div>
+    <div class="menu-links">
+        <a href="index-en.html">Home</a>
+        <a href="parcours-en.html">Background</a>
+        <a href="contact-en.html">Contact</a>
+    </div>
+</div>
+
+<div class="section-container">
+
+<h1 class="page-title">Mathilde Artificial Intelligence</h1>
+
+<div class="content">
+    <div class="text-block">
+        Mathilde AI is my personalised virtual assistant. I designed it in my image, with my own body of knowledge, in order to replicate my working method. <br><br>
+        Throughout my studies and professional journey, I reformulated all the knowledge I acquired in class, in books and in scientific articles, and I deepened it to build a very complete and detailed set of resource documents covering the whole of viticulture and oenology. I wanted to create my personal database, to keep updating it as new discoveries arise so that I never lose knowledge over time. I gathered all these documents to duplicate my knowledge and my method in an autonomous model capable of: <br>
+        – answering questions by drawing on my own knowledge. <br>
+        – responding to any request instantly, adapting to your working hours and saving you time. <br>
+        – always staying up to date with the evolution of scientific knowledge thanks to its ability to self-learn from the latest published research. <br>
+        – mastering critical thinking and being able to answer only with knowledge whose accuracy I personally guarantee. <br><br>
+        <i>Mathilde AI is still in development to ensure the most knowledgeable and high-performing model possible; it will be available soon.</i><br><br>
+        <a href="contact-en.html" class="btn">Contact me to learn more about Mathilde AI</a>
+</div>
+
+    <div class="video-block">
+        <video controls>
+            <source src="images/videoen.mp4" type="video/mp4">
+            Your browser does not support video playback.
+        </video>
+    </div>
+</div>
+
+</div>
+
+<footer>
+© 2025 ViniSystems | 
+<a href="legalmentions-en.html">Legal notice and general terms of sale</a> | 
+<a href="confidentiality-en.html">Privacy policy</a> | 
+<a href="resiliation-en.html">Contracts and termination</a>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Fermer le menu si on clique ailleurs
+window.onclick = function(event) {
+    if (!event.target.closest('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            if (dropdowns[i].classList.contains('show')) {
+                dropdowns[i].classList.remove('show');
+            }
+        }
+    }
+}
+</script>
+
+
+</body>
+</html>
