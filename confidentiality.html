@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de confidentialité – ViniSystems</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --header-bg: #ECECEC;
+            --text-color: #000000;
+            --physical-bg: #FFF8E1;
+            --btn-bg: #ECECEC;
+            --btn-hover: #DADADA;
+            --shadow-color: rgba(0,0,0,0.15);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--physical-bg);
+            color: var(--text-color);
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* ===== HEADER ===== */
+        .menu-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--header-bg);
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 10px var(--shadow-color);
+        }
+
+        .left-header-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .dropdown { position: relative; }
+
+        .dropbtn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 24px;
+        }
+
+        .dropbtn .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            border-radius: 2px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 220px;
+            border-radius: 5px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            top: 140%;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: #990000;
+        }
+
+        .dropdown-content a:last-child { border-bottom: none; }
+
+        .show { display: block; }
+
+        .flags img {
+            width: 30px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .menu-links a {
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        .menu-links a:hover { color: #990000; }
+
+        /* ===== CONTENU ===== */
+        .content-wrapper {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px var(--shadow-color);
+    line-height: 1.7;
+    font-size: 16px; /* identique à legalmentions */
+}
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        ul { margin-left: 20px; }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--header-bg);
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            margin-top: auto;
+            box-shadow: 0 -4px 10px var(--shadow-color);
+        }
+
+        footer a {
+            margin: 0 10px;
+            color: #333;
+        }
+
+        footer a:hover { color: #990000; }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <div class="menu-container">
+        <div class="left-header-group">
+
+            <div class="dropdown">
+                <button onclick="toggleMenu()" class="dropbtn">
+                    <span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span>
+                </button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="consulting.html">Consulting</a>
+                    <a href="artificial.html">Mathilde AI</a>
+                    <a href="softwares.html">Logiciels</a>
+                    <a href="tubprotect.html">TubProtect</a>
+                </div>
+            </div>
+
+            <div class="flags">
+    <a href="confidentiality.html"><img src="images/fr.png" alt="FR"></a>
+    <a href="confidentiality-en.html"><img src="images/en.png" alt="EN"></a>
+    <a href="confidentiality-es.html"><img src="images/es.png" alt="ES"></a>
+</div>
+
+
+        </div>
+
+        <div class="menu-links">
+            <a href="index.html">Accueil</a>
+            <a href="parcours.html">Parcours</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
+
+    <!-- ===== CONTENU ===== -->
+    <div class="content-wrapper">
+
+        <h1>Politique de confidentialité et conditions générales d'utilisation</h1>
+
+        <p>La poursuite de la navigation sur ce site vaut acceptation sans réserve des conditions d'utilisation suivantes. La version actuelle de ces conditions d'utilisation est la seule opposable pendant toute la durée d'utilisation du site et jusqu'à remplacement par une version actualisée.</p>
+
+        <p>Les conditions d’utilisation de ce site et le système de confidentialité décrit sur cette page sont en accord avec la loi française et soumises aux tribunaux du siège social de Carpentras, sous réserve de sa compétence.</p>
+
+        <h2>Article 1 - Accès au site</h2>
+        <p>Votre accès à ce site est sous votre responsabilité, de même que le matériel et de sa protection contre les virus que vous utilisez pour y accéder. Je ne peux être tenue responsable d’aucun dommage lié à votre usage du site via Internet avec votre matériel. Vous vous engagez ainsi, en l’utilisant, à renoncer à toutes poursuites contre l’éditeur de ce site.</p>
+
+        <h2>Article 2 - Maintenance et modification</h2>
+        <p>Dans le cadre de l’évolution de mon offre et des informations, de l’adaptation du site, de maintenance lié à des bugs techniques ou évolution de la règlementation, l’accès au site peut-être limité ou interrompu pour tous les lecteurs ou une partie.</p>
+
+        <p>Ma responsabilité ne peut pas être engagée en cas de bug, panne ou maintenance du site provenant de l’éditeur ou de l’hébergeur qui bloquerait son accès, en partie, totalement ou l’utilisation de ses fonctionnalités.</p>
+
+        <h2>Article 3 - Contenu du site</h2>
+        <p>Ce site est mis à votre disposition pour vous présenter ma gamme de produits et services. Vous vous engagez à l’utiliser de manière personnelle et à ne pas utiliser les informations qu’il contient à des fins commerciales et publicitaires.</p>
+
+        <p>Toutes les images, vidéos et textes que ce site contient ainsi que le code le faisant fonctionner sont protégés par des droits d’auteur. L’ensemble a été rédigé par moi même, Mathilde PEBRE-MAYER, ainsi toute reproduction, utilisation ou adaptation d’éléments sans mon accord préalable écrit et signé est formellement interdite. Cela peut donner lieu à des poursuites, dès la prise de connaissance d’utilisation frauduleuses des informations ou par la suite.</p>
+
+        <p>Les photographies et vidéos de produits et services présentes ne sont pas contractuelles et ne m’engage pas.</p>
+
+        <p>De même, la mise en place de liens hypertextes vers une page du site est interdite sauf accord préalable écrit et signé par moi-même. En cas d’accord, ce dernier peut-être révoqué à tout moment sans justification nécessaire et le contenu de la page contenant le lien hypertexte n’est pas sous ma responsabilité.</p>
+
+        <p>Lors de votre consultation, il est possible que vous accédiez à des données personnelles, concernant notamment l’éditeur ou autre personne: toute utilisation non autorisée ou acte imputant à la vie privée ou réputation est interdit. Je décline toute responsabilité personnelle dans ce cas.</p>
+
+        <h2>Article 4 - Collecte des données</h2>
+
+        <p>L'utilisation d'un site internet implique de respecter les obligations liées à la protection des données personnelles des internautes.</p>
+
+        <p>Une donnée personnelle fait référence à toute information se rapportant à une personne physique identifiée ou identifiable, directement ou non, grâce à un identifiant ou à un ou plusieurs éléments propres à son identité.</p>
+
+        <p>Les données personnelles collectées sont les suivantes :</p>
+
+        <p>Nom et prénom<br>Adresse e-mail</p>
+
+        <p>Lorsque vous envoyez une demande par le formulaire de contact, vous acceptez la politique de confidentialité.</p>
+
+        <p>Elles sont collectées dans le but de vous mettre à disposition le site web, ou les biens ou services proposés, de répondre à votre demande de contact, d’améliorer le site web, de fournir une assistance, d’authentifier votre identité, de gérer des litiges, de personnaliser votre expérience publicitaire et l’envoi d’offres commerciales et de prévenir les fraudes, virus et malwares.</p>
+
+        <p>Ces données sont conservées pendant une durée nécessaire pour pouvoir vous recontacter et fournir des services et en accord avec la règlementation en vigueur. Ces données peuvent être partagées avec des sociétés tierces uniquement dans les buts de garantir la sécurité, fournir une assistance utilisateur ou pour des motifs administratifs ou judiciaires. Les sociétés les utilisant s’engagent à respecter la règlementation en vigueur concernant les données.</p>
+
+        <p>Je travaille à l’international, vous données sont ainsi susceptible d’être traitées hors de France.</p>
+
+        <p>Vous disposez, en application de la règlementation en vigueur, des droits suivants :</p>
+
+        <p>Accès à vos données : vous pouvez demander à consulter à tout moment les données personnelles vous concernant sous réserve de fournir une preuve d’identité.<br>
+        Rectification de vos données : si vos données personnelles sont fausses, vous pouvez demander la mise à jour de ces informations.<br>
+        Suppression ou utilisation limitée des données : vous pouvez demander la suppression des vos données, la limitation de leur utilisation ou vous opposer à leur utilisation.<br>
+        Portabilité : vous pouvez demander la transmission de vos données vers un autre site.<br>
+        Gestion post-mortem : vous pouvez organiser la gestion de vos données après votre décès.</p>
+
+        <p>Toute demande doit être faite à l’adresse e-mail suivante :<a href="mailto:mathilde.pebre@icloud.com"
+   style="text-decoration: underline;">
+    mathilde.pebre@icloud.com
+</a>. Elle doit être accompagnée d’une preuve d’identité valable et d’un moyen de re-contact actif. Le délais maximal de traitement de la demande est de 3 mois et peut-être allongé en cas de problème de santé de l’éditeur ou tout problème le mettant, contre son grès, à ne pas pouvoir satisfaire la demande.</p>
+
+        <p>Dans le cas échéant, vous pouvez faire une réclamation auprès de la CNIL :<a href="https://cnil.fr/fr" target="_blank" style="text-decoration: underline;">
+    https://cnil.fr/fr
+</a></p>
+
+        <p>En cas de non fourniture de vos données ou de suppression, il peut être impossible de vous re-contacter, répondre à vos demandes ou d’ajuster l’offre à vos besoins. Je n’en suis pas tenue responsable.</p>
+
+        <p>Vous pouvez recevoir des offres commerciales suite à la consultation de ce site. Si vous ne le souhaitez pas, merci d’envoyer un e-mail à <a href="mailto:mathilde.pebre@icloud.com"
+   style="text-decoration: underline;">
+    mathilde.pebre@icloud.com
+</a>.</p>
+
+        <h2>Article 5 - Cookies</h2>
+
+        <p>Les cookies sont des traceurs qui analysent la navigation, les déplacements et les habitudes de consultation ou de consommation de l'internaute pour permettre l'affichage de publicités ciblées.</p>
+
+        <p>Le site peut collecter des informations de consultation pour suivre le trafic du site par page à des fins d’amélioration, de réorganisation ou administratives.</p>
+
+        <p>D’autres cookies peuvent être collectés avec votre accord à l’aide de la bannière apparaissant en bas de votre écran lors de votre première consultation du site. En les acceptant dans la bannière qui apparaîtra en bas de votre écran, par l’intermédiaire du bouton “accepter” vous donner votre accord pour l’utilisation de tous les types de cookies. Vous pouvez aussi, à l’aide du bouton “personnaliser” choisir certains cookies uniquement (gestion de clientèle, enquête de satisfaction, opération de prospection…). Vous vous engagez à répondre et indiquer votre choix avant de poursuivre la navigation sur le site. Votre consentement est donné pour une période d’un an. Vous pouvez désactiver les cookies à tout moment.</p>
+
+        <p>Les cookies sont collectés à l’aide de Google Analytics pour mesurer l’audience.</p>
+
+        <h2>Article 6 - Contact</h2>
+
+        <p>Pour toute nécessité de contact, question sur les informations du site web, fonctionnalités, vous pouvez envoyer votre demande à l’adresse e-mail suivante :<a href="mailto:mathilde.pebre@icloud.com"
+   style="text-decoration: underline;">
+    mathilde.pebre@icloud.com
+</a></p>
+
+    </div>
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        © 2025 ViniSystems | 
+        <a href="legalmentions.html">Mentions légales et conditions générales de vente</a> | 
+        <a href="confidentiality.html">Politique de confidentialité</a> | 
+        <a href="resiliation.html">Contrats et résiliation</a>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.closest('.dropbtn')) {
+                document.querySelectorAll(".dropdown-content").forEach(el => el.classList.remove("show"));
+            }
+        }
+    </script> 
+
+
+</body>
+</html>
