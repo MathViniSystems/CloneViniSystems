@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Softwares – ViniSystems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --header-bg: #ECECEC;
+        --text-color: #000000;
+        --accueil-bg: #FFF8E1;
+        --consulting-bg: #D2B48C;
+        --ai-bg: rgba(153,0,0,0.7);
+        --softwares-bg: #A3B18A;
+        --physical-bg: #FFF8E1; 
+        --btn-bg: #ECECEC;
+        --btn-hover: #DADADA;
+        --shadow-color: rgba(0,0,0,0.15);
+        --softwares-bg: #2A6F78; /* bleu canard */
+        --softwares-text: #FFFFFF;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: var(--physical-bg);
+        color: var(--text-color);
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== ENTÊTE ===== */
+    .menu-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background-color: var(--header-bg);
+        box-shadow: 0 4px 10px var(--shadow-color);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .left-header-group {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .dropdown { position: relative; display: inline-block; }
+
+    .dropbtn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 24px;
+    }
+
+    .dropbtn .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 2px;
+    }
+
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 140%;
+    left: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    border-bottom: 1px solid #eee;
+}
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
+    color: #990000;
+}
+.show { display: block; }
+/* ------------------------------ */
+
+   .menu-links a {
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.menu-links a:hover { color: #990000; }
+.flags img {
+    width: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+    /* ===== CONTENU ===== */
+    .section-container {
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 20px;
+    }
+
+    .page-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        line-height: 1.7;
+        margin-bottom: 40px;
+    }
+
+    .category {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+
+    .category-title {
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .category-text {
+        flex: 1;
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    .category-box {
+    width: 40%;
+    background-color: var(--softwares-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px var(--shadow-color);
+    transition: transform 0.4s;
+    color: var(--softwares-text); /* texte blanc */
+}
+
+    .category-box {
+    display: flex;         
+    flex-direction: column;  
+}
+
+.category-box p {
+    margin-bottom: 15px; 
+    flex-grow: 1; 
+}
+
+     .category-box:hover {
+    transform: translateY(-5px);
+}
+
+    .decorative-line {
+        width: 80%;
+        height: 2px;
+        background-color: #d0d0d0;
+        margin: 40px auto;
+        box-shadow: 0 4px 10px var(--shadow-color);
+    }
+    
+   .btn {
+    display: block; 
+    width: fit-content;
+    margin-top: 10px; 
+    padding: 10px 18px;
+    background-color: var(--btn-bg);
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    text-align: center;
+    color: #000000;
+}
+
+    .btn:first-of-type {
+    margin-top: 15px; 
+}
+    .btn:hover {
+        background-color: var(--btn-hover);
+        transform: translateY(-3px);
+    }
+
+    i { font-style: italic; }
+  
+
+    /* ===== PIED DE PAGE ===== */
+    footer {
+        background-color: var(--header-bg);
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+        box-shadow: 0 -4px 10px var(--shadow-color);
+    }
+    footer a {
+    margin: 0 10px;
+    color: #333;
+    transition: color 0.3s;
+}
+    
+    footer a:hover {
+    color: #990000;
+}
+
+/* Responsive fiable pour mobile et tablette */
+@media (max-width: 1024px) {
+
+    /* Mise en colonne */
+    .category {
+        flex-direction: column !important;
+        align-items: center !important; /* centre tout */
+        gap: 25px !important;
+        width: 100% !important;
+    }
+
+    /* Ordre : texte en premier, cadre en second */
+    .category-text {
+        order: 1 !important;
+        width: 100% !important;
+        text-align: left !important;
+    }
+
+    .category-box {
+        order: 2 !important;
+        width: 100% !important;
+        margin: 0 auto !important; /* centre le cadre */
+        box-sizing: border-box;
+    }
+
+    /* Boutons bien contenus */
+    .category-box .btn {
+        width: 100% !important;
+        text-align: center !important;
+        box-sizing: border-box;
+    }
+
+    /* Anti débordement horizontal */
+    body, html {
+        overflow-x: hidden !important;
+    }
+}
+    
+</style>
+</head>
+<body>
+
+<!-- ===== ENTÊTE ===== -->
+<div class="menu-container">
+
+    <div class="left-header-group">
+        <div class="dropdown">
+            <button onclick="toggleMenu()" class="dropbtn">
+                <span class="bar"></span><span class="bar"></span>
+                <span class="bar"></span><span class="bar"></span>
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="consulting-en.html">Consulting</a>
+                <a href="artificial-en.html">Mathilde AI</a>
+                <a href="softwares-en.html">Softwares</a>
+                <a href="tubprotect-en.html">TubProtect</a>
+            </div>
+        </div>
+
+        <div class="flags">
+    <a href="softwares.html"><img src="images/fr.png" alt="FR"></a>
+    <a href="softwares-en.html"><img src="images/en.png" alt="EN"></a>
+    <a href="softwares-es.html"><img src="images/es.png" alt="ES"></a>
+</div>
+
+
+    </div>
+
+    <div class="menu-links">
+        <a href="index-en.html">Home</a>
+        <a href="parcours-en.html">Background</a>
+        <a href="contact-en.html">Contact</a>
+    </div>
+
+</div>
+
+<!-- ===== CONTENU ===== -->
+<div class="section-container">
+
+    <h1 class="page-title">Softwares and automations</h1>
+<div class="subtitle">
+    ViniSystems is also a set of customised computer solutions designed to simplify your data management and domain-specific reasoning. I created them based on my own experiences, thinking of what would have made my work easier and saved time during my missions.
+</div>
+
+<!-- ===== MATHWINEAPP ===== -->
+<div class="category">
+    <div class="category-text">
+        <div class="category-title">ViniSystems Management App</div>
+        ViniSystems App is an application available on computer and phone, combining a set of tools added on request to suit your needs. Its purpose is to centralise data creation and management, avoiding human errors and loss of information, with a welcoming and easy-to-use interface.
+    </div>
+
+    <div class="category-box">
+        <p>
+        Forget about: <br>
+            - Searching for how much tartaric acid you added during harvest across every analysis report or Excel file, which might not even have been written down; <br>
+            - Last-minute tastings that make it hard to focus on relevant attributes and end up losing valuable information for the next vintage; <br>
+            - Urgently hunting for the bottler or filter manual lost somewhere, only to find the instructions are never clear enough to solve the problem easily; <br>
+            - “Did I sulphite this barrel?” “How much did I put?” “When was it?”; <br>
+            - Product doses calculated quickly without leaving any trace. <br>
+        </p>
+        <a href="contact.html" class="btn">Learn more</a>
+    </div>
+</div>
+
+    <div class="decorative-line"></div>
+
+    <!-- ===== MATHWINETRAZABILITY ===== -->
+    <div class="category">
+    <div class="category-text">
+        <div class="category-title">ViniSystem Traceability</div>
+        ViniSystems Traceability is a traceability software available on computer, including only the features you need,
+        ensuring easy handling while allowing you to follow your wines and meet regulatory requirements. A solution designed for small wineries, providing a complete and customisable tool that is easier to use than larger systems mainly intended for big estates.
+        <br><br>
+        <i>ViniSystems Traceability is still under development; a first version will be available soon.</i>
+    </div>
+
+    <div class="category-box">
+        <p>
+        Forget about: <br>
+        - Multiple Excel files for traceability tracking that make information difficult to find; <br>
+        - Information scattered everywhere: analyses, transfers, product additions, fermentation monitoring… everything is centralised. <br>
+        <br><br>
+        But that’s the aim of any traceability software; what I really want is to: <br>
+        - Simplify a tool that is often far too complex for the needs of small wineries; <br>
+        - Integrate management tools like my predictive model for fermentation issues; <br>
+        - Include as much automation as possible so data entry is as quick as it can be. <br>
+        </p>
+        <a href="contact.html" class="btn">Learn more</a>
+    </div>
+</div>
+</div>
+
+<!-- ===== PIED DE PAGE ===== -->
+<footer>
+© 2025 ViniSystems | 
+<a href="legalmentions-en.html">Legal notice and general terms of sale</a> | 
+<a href="confidentiality-en.html">Privacy policy</a> | 
+<a href="resiliation-en.html">Contracts and termination</a>
+</footer>
+
+
+<script>
+    function toggleMenu() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.closest('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                dropdowns[i].classList.remove('show');
+            }
+        }
+    }
+</script>
+
+</body>
+</html> 
