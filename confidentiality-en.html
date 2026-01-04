@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy policy and terms of use – ViniSystems</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --header-bg: #ECECEC;
+            --text-color: #000000;
+            --physical-bg: #FFF8E1; 
+            --btn-bg: #ECECEC;
+            --btn-hover: #DADADA;
+            --shadow-color: rgba(0,0,0,0.15);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--physical-bg);
+            color: var(--text-color);
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* ===== HEADER ===== */
+        .menu-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--header-bg);
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 10px var(--shadow-color);
+        }
+
+        .left-header-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .dropdown { position: relative; }
+
+        .dropbtn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 24px;
+        }
+
+        .dropbtn .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            border-radius: 2px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 220px;
+            border-radius: 5px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            top: 140%;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: #990000;
+        }
+
+        .dropdown-content a:last-child { border-bottom: none; }
+
+        .show { display: block; }
+
+        .flags img {
+            width: 30px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .menu-links a {
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        .menu-links a:hover { color: #990000; }
+
+        /* ===== CONTENU ===== */
+        .content-wrapper {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px var(--shadow-color);
+    line-height: 1.7;
+    font-size: 16px; /* identique à legalmentions */
+}
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        ul { margin-left: 20px; }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--header-bg);
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            margin-top: auto;
+            box-shadow: 0 -4px 10px var(--shadow-color);
+        }
+
+        footer a {
+            margin: 0 10px;
+            color: #333;
+        }
+
+        footer a:hover { color: #990000; }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <div class="menu-container">
+        <div class="left-header-group">
+
+            <div class="dropdown">
+                <button onclick="toggleMenu()" class="dropbtn">
+                    <span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span>
+                </button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="consulting-en.html">Consulting</a>
+                    <a href="artificial-en.html">Mathilde AI</a>
+                    <a href="softwares-en.html">Softwares</a>
+                    <a href="tubprotect-en.html">TubProtect</a>
+                </div>
+            </div>
+
+            <div class="flags">
+    <a href="confidentiality.html"><img src="images/fr.png" alt="FR"></a>
+    <a href="confidentiality-en.html"><img src="images/en.png" alt="EN"></a>
+    <a href="confidentiality-es.html"><img src="images/es.png" alt="ES"></a>
+</div>
+
+
+        </div>
+
+        <div class="menu-links">
+            <a href="index-en.html">Home</a>
+            <a href="parcours-en.html">Background</a>
+            <a href="contact-en.html">Contact</a>
+        </div>
+    </div>
+
+
+    <!-- ===== CONTENU ===== -->
+    <div class="content-wrapper">
+
+        <h1>Privacy policy and terms of use</h1>
+
+<p>Continuing to browse this website constitutes full acceptance of the following terms of use. The current version of these terms is the only one applicable for the entire duration of your use of the website and until it is replaced by an updated version.</p>
+
+<p>The terms of use of this website and the privacy system described on this page comply with French law and are subject to the courts of Carpentras, subject to their jurisdiction.</p>
+
+<h2>Article 1 – Access to the website</h2>
+<p>Your access to this website is your responsibility, as is the equipment you use and its protection against viruses. I cannot be held responsible for any damage related to your use of the website via the Internet with your own equipment. By using this website, you agree to waive any legal action against the website publisher.</p>
+
+<h2>Article 2 – Maintenance and modification</h2>
+<p>As part of the evolution of my services and information, website updates, maintenance related to technical issues or changes in regulations, access to the website may be limited or interrupted for all users or part of them.</p>
+
+<p>My responsibility cannot be engaged in the event of a technical issue, failure, or maintenance operation from the publisher or hosting provider that may partially or completely block access to the website or its functionalities.</p>
+
+<h2>Article 3 – Website content</h2>
+<p>This website is made available to present my range of products and services. You agree to use it personally and not to use the information it contains for commercial or advertising purposes.</p>
+
+<p>All images, videos, texts, and the code operating this website are protected by copyright. All content has been produced by myself, Mathilde PEBRE-MAYER, and any reproduction, use, or adaptation without my prior written and signed consent is strictly prohibited. Such actions may give rise to legal proceedings as soon as any fraudulent use is identified.</p>
+
+<p>The photographs and videos of products and services featured on the website are not contractual and do not legally bind me.</p>
+
+<p>Likewise, creating hyperlinks to any page of this website is prohibited without my prior written and signed consent. If granted, this consent may be revoked at any time without justification, and the content of the page containing the hyperlink is not my responsibility.</p>
+
+<p>During your visit, it is possible that you may access personal data concerning the publisher or another individual: any unauthorised use or action affecting privacy or reputation is prohibited. I decline all personal responsibility in such cases.</p>
+
+<h2>Article 4 – Data collection</h2>
+
+<p>Using a website implies respecting the obligations related to protecting the personal data of users.</p>
+
+<p>Personal data refers to any information relating to an identified or identifiable natural person, directly or indirectly, through an identifier or several elements specific to their identity.</p>
+
+<p>The personal data collected are as follows:</p>
+
+<p>Full name<br>E-mail address</p>
+
+<p>When you submit a request via the contact form, you accept the privacy policy.</p>
+
+<p>Data are collected for the purpose of providing access to the website, supplying the goods or services offered, responding to your contact request, improving the website, providing support, authenticating your identity, managing disputes, personalising advertising experiences and commercial offers, and preventing fraud, viruses, and malware.</p>
+
+<p>These data are stored for the necessary period to allow re-contact and service provision, in accordance with applicable regulations. Data may be shared with third-party companies solely to guarantee security, provide user support, or for administrative or judicial purposes. These companies commit to complying with the relevant data protection regulations.</p>
+
+<p>I work internationally, therefore your data may be processed outside France.</p>
+
+<p>Under applicable regulations, you have the following rights:</p>
+
+<p>
+Access to your data: you may request to consult your personal data at any time, subject to providing proof of identity.<br>
+Rectification: if your personal data are incorrect, you may request that they be updated.<br>
+Deletion or restricted use: you may request the deletion of your data, limit their use, or object to their processing.<br>
+Portability: you may request the transfer of your data to another service.<br>
+Post-mortem instructions: you may determine how your data should be managed after your death.
+</p>
+
+<p>All requests must be sent to the following e-mail address:
+<a href="mailto:mathilde.pebre@icloud.com" style="text-decoration: underline;">
+    mathilde.pebre@icloud.com
+</a>. They must be accompanied by valid proof of identity and an active means of re-contact. The maximum processing time for a request is 3 months and may be extended in case of health issues affecting the publisher or any situation preventing them from responding within the timeframe.</p>
+
+<p>Where applicable, you may file a complaint with the CNIL:
+<a href="https://cnil.fr/fr" target="_blank" style="text-decoration: underline;">
+    https://cnil.fr/fr
+</a></p>
+
+<p>If you do not provide your data or request their deletion, it may become impossible to re-contact you, respond to your requests, or adapt the services to your needs. I cannot be held responsible for this.</p>
+
+<p>You may receive commercial offers after visiting this website. If you do not wish to receive them, please send an e-mail to 
+<a href="mailto:mathilde.pebre@icloud.com" style="text-decoration: underline;">
+    mathilde.pebre@icloud.com
+</a>.
+</p>
+
+<h2>Article 5 – Cookies</h2>
+
+<p>Cookies are trackers that analyse browsing habits, movements, and consultation or consumption practices to enable the display of targeted advertising.</p>
+
+<p>The website may collect browsing information to monitor page traffic for improvement, reorganisation, or administrative purposes.</p>
+
+<p>Additional cookies may be collected with your consent via the banner appearing at the bottom of your screen during your first visit. By accepting via the “accept” button, you consent to the use of all types of cookies. By selecting “customise”, you may choose only certain cookies (customer management, satisfaction surveys, marketing operations...). You agree to express your choice before continuing to browse the website. Your consent is valid for one year. You may disable cookies at any time.</p>
+
+<p>Cookies are collected using Google Analytics to measure website traffic.</p>
+
+<h2>Article 6 – Contact</h2>
+
+<p>For any contact needs, questions about the website’s information or functionalities, you may send your request to the following e-mail address:
+<a href="mailto:mathilde.pebre@icloud.com" style="text-decoration: underline;">
+    mathilde.pebre@icloud.com
+</a></p>
+
+</div>
+
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+    © 2025 ViniSystems |
+    <a href="legalmentions-en.html">Legal notice and general terms of sale</a> |
+    <a href="confidentiality-en.html">Privacy policy</a> |
+    <a href="resiliation-en.html">Contracts and termination</a>
+</footer>
+
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.closest('.dropbtn')) {
+                document.querySelectorAll(".dropdown-content").forEach(el => el.classList.remove("show"));
+            }
+        }
+    </script>
+
+
+</body>
+</html>
