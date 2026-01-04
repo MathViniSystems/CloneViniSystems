@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background – ViniSystems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --header-bg: #ECECEC;
+            --btn-bg: #ECECEC;
+            --btn-hover: #DADADA;
+            --shadow-color: rgba(0,0,0,0.15);
+            --text-color: #000000;
+            --physical-bg: #FFF8E1;
+            --green-box: #2A6F78;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: var(--physical-bg);
+        }
+
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; display: block; }
+
+        /* --- HEADER (Code de l'Index appliqué ici) --- */
+        .menu-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: var(--header-bg);
+            box-shadow: 0 4px 10px var(--shadow-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .left-header-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+/* --- Style du Menu Déroulant --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Bouton Menu Burger (4 traits) */
+.dropbtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+}
+
+.dropbtn .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+/* CONTENU  */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 140%;
+    left: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    font-size: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    color: #990000;
+}
+
+/* Classe JS qui affiche le menu */
+.show {
+    display: block;
+}
+
+
+        .menu-links a {
+            margin: 0 15px; /* Espacement identique à l'index */
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .menu-links a:hover {
+            color: #990000;
+        }
+
+        .flags img {
+            width: 30px;
+            margin-left: 10px; /* Changé de margin-right à margin-left pour matcher l'index */
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        /* Ajustement pour garder l'alignement des drapeaux correct si besoin */
+        .flags { display: flex; align-items: center; } 
+        .flags a { margin-right: 10px; }
+
+
+        /* --- CONTENU --- */
+        .section-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        /* TITLE */
+        .page-title {
+            text-align: left;
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        /* TEXT + IMAGE SECTION */
+        .text-image-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .text-block-left {
+            flex: 1;
+            min-width: 300px;
+            font-size: 18px; /* Harmonisation police */
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Decorative line */
+        .decorative-line {
+            width: 80%;
+            height: 2px;
+            background-color: #d0d0d0;
+            margin: 15px auto 40px auto;
+            box-shadow: 0 4px 10px var(--shadow-color);
+        }
+
+        .intro-photo-right {
+            width: 32%;
+            height: 330px;
+            background-color: #ccc;
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 4px 12px var(--shadow-color);
+        }
+
+        /* TEXT BLOCK SIMPLE */
+        .text-block {
+            font-size: 18px; /* Harmonisation police */
+            line-height: 1.7;
+            margin-bottom: 40px;
+            /* La suppression du </div> fautif permet à ce bloc de s'aligner correctement */
+        }
+
+        /* GRID IMAGES */
+        .grid-photos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 40px 0;
+        }
+        .photo-item { text-align: center; }
+
+        .photo-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px var(--shadow-color);
+        }
+
+        .grid-photos-caption {
+            font-size: 14px;
+            font-style: italic;
+            color: #555;
+            margin-top: 8px;
+        }
+
+        /* SECOND IMAGE */
+        .intro-photo {
+            width: 100%;
+            height: 350px;
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center;
+            background-color: #ccc;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px var(--shadow-color);
+        }
+
+        /* GREEN BOX */
+        .green-box {
+            background-color: var(--green-box);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px var(--shadow-color);
+            font-size: 18px; /* Harmonisation police */
+            line-height: 1.7;
+            margin: 50px 0;
+            transition: transform 0.4s, box-shadow 0.4s;
+            color: white;
+        }
+        .green-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+        }
+
+        .green-box-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        /* BUTTON */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 18px;
+            background-color: var(--btn-bg);
+            border-radius: 8px;
+            font-weight: bold;
+            border: 1px solid #bbb;
+            cursor: pointer;
+            box-shadow: 0 4px 8px var(--shadow-color);
+            transition: all 0.3s;
+            color: #000000;
+        }
+        .btn:hover {
+            background-color: var(--btn-hover);
+            transform: translateY(-3px);
+        }
+
+        footer {
+        background-color: var(--header-bg);
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+        box-shadow: 0 -4px 10px var(--shadow-color);
+    }
+    footer a {
+    margin: 0 10px;
+    color: #333;
+    transition: color 0.3s;
+}
+    
+    footer a:hover {
+    color: #990000;
+}
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .text-image-section { flex-direction: column; }
+            .intro-photo-right { width: 100%; height: 250px; }
+            .grid-photos { grid-template-columns: repeat(2, 1fr); }
+            .menu-links a { margin: 0 8px; font-size: 14px; 
+            .intro-photo-right {width: 100%; height: 250px;background-position: center bottom;} /* Ajustement mobile pour le menu */
+        }
+            
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+    <div class="left-header-group">
+<div class="dropdown">
+    <button onclick="toggleMenu()" class="dropbtn" aria-label="Menu principal">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <div id="myDropdown" class="dropdown-content">
+        <a href="consulting-en.html">Consulting</a>
+        <a href="artificial-en.html">Mathilde AI</a>
+        <a href="softwares-en.html">Softwares</a>
+        <a href="tubprotect-en.html">TubProtect</a>
+    </div>
+</div>
+
+        <div class="flags">
+    <a href="parcours.html"><img src="images/fr.png" alt="FR"></a>
+    <a href="parcours-en.html"><img src="images/en.png" alt="EN"></a>
+    <a href="parcours-es.html"><img src="images/es.png" alt="ES"></a>
+</div>
+
+
+        </div>
+        <div class="menu-links">
+            <a href="index-en.html">Home</a>
+            <a href="parcours-en.html">Background</a>
+            <a href="contact-en.html">Contact</a>
+        </div>
+    </div>
+
+    <div class="section-container">
+
+        <h1 class="page-title">Background</h1>
+
+        <div class="text-image-section">
+    <div class="text-block-left">
+        Trained as a food engineer at Institut Agro Rennes (Agrocampus Ouest), I chose to specialise in viticulture and oenology at Institut Agro Montpellier (SupAgro) through a double degree in oenology. There, I had the opportunity to follow a demanding programme that allowed me to explore both viticulture and oenology in all their dimensions (chemistry, vine physiology, geology, microbiology, ampelography, oenological engineering, sensory analysis, cultivation systems, effluent management, regulations, marketing, finance).  
+        In parallel, I continued studying one of my passions, data science, which enabled me to expand my skills and bring added value to my work (statistical analysis, automation of calculations and protocols, predictions, creation of software and applications…).  
+        I have always aspired to work internationally, and I have taken advantage of this to gain experience in French-, English-, and Spanish-speaking environments.
+    </div>
+    <div class="intro-photo-right" style="background-image:url('images/IMG_8840.JPG');" role="img" aria-label="Portrait"></div>
+</div>
+
+
+        <div class="decorative-line"></div>
+        
+
+        <div class="text-block">
+    I have been fortunate to shape my training at an international level:<br><br>
+    – I began my journey in France, in the Ventoux AOC, where I worked on managing fermentation issues and modelling them in order to predict and better control them.<br>
+    – I continued in Australia, at the research centre of the University of Adelaide, where I worked on a project studying a biostimulant derived from recycled organic waste applied to the vine.<br>
+    – I then discovered the vineyards of Lanzarote and their artisanal and atypical cultivation and winemaking methods, which greatly inspired me in addressing the challenges of the sector.<br>
+    – I went on to work in the vineyards of Southeast Spain, where I fully restructured a 25-hectare estate towards coherent and justified practices to ensure high quality standards; I also managed two vinifications there and oversaw the monitoring of the wines and the vineyard for over a year.
+</div>
+
+
+        <div class="grid-photos">
+            <div class="photo-item"><img src="images/exp1.jpeg" alt="Provence"><div class="grid-photos-caption">Provence, 2022</div></div>
+            <div class="photo-item"><img src="images/exp2.jpeg" alt="Bullas"><div class="grid-photos-caption">Bullas, 2025</div></div>
+            <div class="photo-item"><img src="images/exp3.png" alt="Tasmania"><div class="grid-photos-caption">Tasmania, 2023</div></div>
+            <div class="photo-item"><img src="images/exp4.jpeg" alt="Lanzarote"><div class="grid-photos-caption">Lanzarote, 2024</div></div>
+        </div>
+
+        <h3 style="font-family:'Playfair Display', serif; text-align:center; margin:40px 0; font-size:20px;">
+    An international and multidisciplinary mission at the heart of wineries. <br><br>
+    – Making the latest knowledge and scientific information accessible; <br>
+    – Teaching smaller wineries how to carry out continuous improvement and innovation trials; <br>
+    - Providing accessible automation and data-management methods ; <br>
+    – Informing, training, and ensuring compliance with regulations and quality control. 
+    <br>
+</h3>
+
+        </h3>
+
+        <div class="intro-photo" style="background-image:url('images/moi2.jpeg');" role="img" aria-label="Global vision"></div>
+
+        <div class="green-box">
+            <div class="green-box-title">My vision</div>
+I am committed to promoting a working method that reflects my personality: rigorous, versatile, and a lifelong perfectionist. I have always carried out all my missions driven by a genuine desire to help and to share my knowledge and skills in a different way. <br><br>
+– I have always been told that I was not concise enough and that I was too precise: today, I am able to pay attention to the slightest detail and to write documents and protocols with remarkable accuracy, without errors or omissions;<br>
+– I have always been told that I could not master everything and that I needed to specialise: today, I am able to make decisions fully aware of their consequences at every level, and my versatility is my greatest asset;<br>
+– As a student, I was always criticised for writing notes that were too long, even when the course was not assessed: today, I have built a broad body of knowledge and created an extensive documentation base that I used to train my artificial intelligence with the latest advances in oenology and viticulture.<br>
+<a href="contact-en.html" class="btn">Discover how I can help you</a>
+</div>
+
+    </div>
+
+   <footer>
+© 2025 ViniSystems | 
+<a href="legalmentions-en.html">Legal notice and general terms of sale</a> | 
+<a href="confidentiality-en.html">Privacy policy</a> | 
+<a href="resiliation-en.html">Contracts and termination</a>
+</footer>
+
+    
+<script>
+function toggleMenu() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Fermer le menu si on clique ailleurs
+window.onclick = function(event) {
+    if (!event.target.closest('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            if (dropdowns[i].classList.contains('show')) {
+                dropdowns[i].classList.remove('show');
+            }
+        }
+    }
+}
+</script>
+
+
+</body>
+</html> 
