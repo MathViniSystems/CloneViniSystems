@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso legal – ViniSystems</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --header-bg: #ECECEC;
+            --btn-bg: #ECECEC;
+            --btn-hover: #DADADA;
+            --shadow-color: rgba(0,0,0,0.15);
+            --text-color: #000;
+            --physical-bg: #FFF8E1;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--physical-bg);
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* ===== HEADER ===== */
+        .menu-container {
+            display: flex; justify-content: space-between; align-items: center;
+            background-color: var(--header-bg);
+            padding: 15px 30px;
+            box-shadow: 0 4px 10px var(--shadow-color);
+            position: sticky; top: 0; z-index: 100;
+        }
+
+        .left-header-group { display:flex; align-items:center; gap:20px; }
+
+        .dropdown { position:relative; display:inline-block; }
+
+        .dropbtn {
+            background:transparent; border:none; cursor:pointer; padding:5px;
+            display:flex; flex-direction:column; justify-content:space-between; height:24px;
+        }
+        .dropbtn .bar {
+            width:25px; height:3px; background:#333; border-radius:2px;
+        }
+
+        .dropdown-content {
+            display:none; position:absolute; min-width:220px;
+            background:#f9f9f9; box-shadow:0 8px 16px rgba(0,0,0,0.2);
+            border-radius:5px; top:140%; left:0; overflow:hidden;
+        }
+        .dropdown-content a {
+            display:block; padding:12px 16px; border-bottom:1px solid #eee;
+        }
+        .dropdown-content a:hover { background:#ddd; color:#990000; }
+
+        .show { display:block; }
+
+        .flags img { width:30px; margin-right:10px; }
+
+        .menu-links a { margin-left:20px; font-weight:bold; }
+        .menu-links a:hover { color:#990000; }
+
+        /* ===== CONTENT ===== */
+        .section {
+            max-width:1100px;
+            margin:50px auto;
+            background:#fff;
+            padding:40px;
+            border-radius:12px;
+            box-shadow:0 6px 15px var(--shadow-color);
+        }
+        h1, h2 { font-family:'Playfair Display', serif; }
+        h1 { font-size:36px; margin-bottom:20px; }
+        h2 { margin-top:40px; }
+
+        .subtitle-legal {
+    font-size: 26px;     /* même taille pour tous les sous-titres */
+    font-weight: bold;
+    margin-top: 40px;    /* espace avant */
+    margin-bottom: 15px; /* espace après */
+    font-family: 'Playfair Display', serif;
+}
+
+        /* ===== FOOTER ===== */
+        footer {
+            background:var(--header-bg);
+            padding:20px; text-align:center; font-size:14px;
+            box-shadow:0 -4px 10px var(--shadow-color);
+        }
+        footer a { margin:0 10px; color:#333; }
+        footer a:hover { color:#990000; }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="menu-container">
+    <div class="left-header-group">
+        <div class="dropdown">
+            <button onclick="toggleMenu()" class="dropbtn">
+                <span class="bar"></span><span class="bar"></span>
+                <span class="bar"></span><span class="bar"></span>
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="consulting-es.html">Consulting</a>
+                <a href="artificial-es.html">Mathilde AI</a>
+                <a href="softwares-es.html">Programas</a>
+                <a href="tubprotect-es.html">TubProtect</a>
+            </div>
+        </div>
+
+        <div class="flags">
+    <a href="legalmentions.html"><img src="images/fr.png" alt="FR"></a>
+    <a href="legalmentions-en.html"><img src="images/en.png" alt="EN"></a>
+    <a href="legalmentions-es.html"><img src="images/es.png" alt="ES"></a> 
+</div>
+
+
+    </div>
+
+    <div class="menu-links">
+        <a href="index-es.html">Inicio</a>
+        <a href="parcours-es.html">Trayectoria</a>
+        <a href="contact-es.html">Contacto</a>
+    </div>
+</div>
+
+<!-- CONTENT -->
+<section class="section">
+   <h1>Aviso legal</h1>
+
+<p><b>Identidad de la empresa</b><br>
+PEBRE-MAYER Mathilde E.I., domiciliada en 6 impasse de l’Aglandau, 84330 Caromb.<br>
+Productos y servicios distribuidos bajo el nombre comercial ViniSystems.</p>
+
+<p>Título: Ingeniera agroalimentaria titulada por el Institut Agro Rennes Angers, especializada en viticultura y enología en el Institut Agro Montpellier.<br>
+Correo electrónico: 
+<a href="mailto:mathilde.pebre@icloud.com" style="text-decoration: underline;">
+    mathilde.pebre@icloud.com
+</a><br>
+Teléfono: +33 674269508<br>
+Número de registro en el RCS:<br>
+Número de identificación del IVA: no aplicable</p>
+
+<p><b>Identidad del proveedor de alojamiento del sitio:</b><br>
+Nombre: GitHub Pages (GitHub, Inc.)<br>
+Sede social: 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA<br>
+Soporte y contacto: 
+<a href="https://support.github.com" 
+   target="_blank"
+   style="text-decoration: underline;">
+    https://support.github.com
+</a>
+</p>
+
+
+    <h1>Condiciones generales de venta</h1>
+
+<p>Este sitio presenta bienes y servicios destinados a los profesionales del sector vitivinícola.
+De acuerdo con la normativa vigente, estas condiciones se comunican a petición o se incluyen en la facturación y dependen del tipo de prestación.</p>
+
+<p>Deben contener la siguiente información:</p>
+
+<ul>
+    <li>Precio sin IVA en euros: tarifas o método de cálculo del precio.</li>
+    <li>Descuentos y rebajas: reducciones de precio, promociones puntuales y descuentos diferidos.</li>
+    <li>Descuentos comerciales: reducción aplicada en caso de pago anticipado.</li>
+    <li>Condiciones de pago y penalizaciones en caso de retraso.</li>
+    <li>Gastos y fecha de entrega.</li>
+    <li>Procedimientos de resolución de litigios: tribunal competente.</li>
+    <li>Cláusulas posibles: reserva de propiedad, limitación de responsabilidad, fuerza mayor, rescisión.</li>
+</ul>
+
+<p>Para más información: 
+<a href="https://entreprendre.service-public.gouv.fr/vosdroits/F31228" 
+   target="_blank"
+   style="text-decoration: underline;">
+    https://entreprendre.service-public.gouv.fr/vosdroits/F31228
+</a></p>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    © 2025 ViniSystems | 
+    <a href="legalmentions-es.html">Aviso legal y condiciones generales de venta</a> | 
+    <a href="confidentiality-es.html">Política de privacidad</a> | 
+    <a href="resiliation-es.html">Contratos y rescisión</a>
+</footer>
+
+
+<script>
+function toggleMenu() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+window.onclick = function(event) {
+    if (!event.target.closest('.dropbtn')) {
+        document.getElementById("myDropdown").classList.remove('show');
+    }
+}
+</script>
+
+
+</body>
+</html>
