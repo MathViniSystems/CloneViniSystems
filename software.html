@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logiciels – ViniSystems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --header-bg: #ECECEC;
+        --text-color: #000000;
+        --accueil-bg: #FFF8E1;
+        --consulting-bg: #D2B48C;
+        --ai-bg: rgba(153,0,0,0.7);
+        --softwares-bg: #A3B18A;
+        --physical-bg: #FFF8E1;
+        --btn-bg: #ECECEC;
+        --btn-hover: #DADADA; 
+        --shadow-color: rgba(0,0,0,0.15);
+        --softwares-bg: #2A6F78; /* bleu canard */
+        --softwares-text: #FFFFFF;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: var(--physical-bg);
+        color: var(--text-color);
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== ENTÊTE ===== */
+    .menu-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background-color: var(--header-bg);
+        box-shadow: 0 4px 10px var(--shadow-color);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .left-header-group {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .dropdown { position: relative; display: inline-block; }
+
+    .dropbtn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 24px;
+    }
+
+    .dropbtn .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 2px;
+    }
+
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 140%;
+    left: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    border-bottom: 1px solid #eee;
+}
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
+    color: #990000;
+}
+.show { display: block; }
+/* ------------------------------ */
+
+   .menu-links a {
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.menu-links a:hover { color: #990000; }
+.flags img {
+    width: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+    /* ===== CONTENU ===== */
+    .section-container {
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 20px;
+    }
+
+    .page-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        line-height: 1.7;
+        margin-bottom: 40px;
+    }
+
+    .category {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+
+    .category-title {
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .category-text {
+        flex: 1;
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    .category-box {
+    width: 40%;
+    background-color: var(--softwares-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px var(--shadow-color);
+    transition: transform 0.4s;
+    color: var(--softwares-text); /* texte blanc */
+}
+
+    .category-box {
+    display: flex;         
+    flex-direction: column;  
+}
+
+.category-box p {
+    margin-bottom: 15px; /* Espace après le texte */
+    flex-grow: 1; /* Permet au paragraphe de prendre l'espace nécessaire avant les boutons */
+}
+
+     .category-box:hover {
+    transform: translateY(-5px);
+}
+
+    .decorative-line {
+        width: 80%;
+        height: 2px;
+        background-color: #d0d0d0;
+        margin: 40px auto;
+        box-shadow: 0 4px 10px var(--shadow-color);
+    }
+    
+   .btn {
+    display: block; /* Chaque bouton prend sa propre ligne */
+    width: fit-content; /* Le bouton s'ajuste à son contenu */
+    margin-top: 10px; /* Moins d'espace entre les boutons qu'avec le texte */
+    padding: 10px 18px;
+    background-color: var(--btn-bg);
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    text-align: center;
+    color: #000000;
+}
+
+    .btn:first-of-type {
+    margin-top: 15px; /* Un peu plus d'espace pour le premier bouton après le texte */
+}
+    .btn:hover {
+        background-color: var(--btn-hover);
+        transform: translateY(-3px);
+    }
+
+    i { font-style: italic; }
+
+    /* ===== PIED DE PAGE ===== */
+    footer {
+        background-color: var(--header-bg);
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+        box-shadow: 0 -4px 10px var(--shadow-color);
+    }
+    footer a {
+    margin: 0 10px;
+    color: #333;
+    transition: color 0.3s;
+}
+    
+    footer a:hover {
+    color: #990000;
+}
+
+/* Responsive fiable pour mobile et tablette */
+@media (max-width: 1024px) {
+
+    /* Mise en colonne */
+    .category {
+        flex-direction: column !important;
+        align-items: center !important; /* centre tout */
+        gap: 25px !important;
+        width: 100% !important;
+    }
+
+    /* Ordre : texte en premier, cadre en second */
+    .category-text {
+        order: 1 !important;
+        width: 100% !important;
+        text-align: left !important;
+    }
+
+    .category-box {
+        order: 2 !important;
+        width: 100% !important;
+        margin: 0 auto !important; /* centre le cadre */
+        box-sizing: border-box;
+    }
+
+    /* Boutons bien contenus */
+    .category-box .btn {
+        width: 100% !important;
+        text-align: center !important;
+        box-sizing: border-box;
+    }
+
+    /* Anti débordement horizontal */
+    body, html {
+        overflow-x: hidden !important;
+    }
+}
+    
+</style>
+</head>
+<body>
+
+<!-- ===== ENTÊTE ===== -->
+<div class="menu-container">
+
+    <div class="left-header-group">
+        <div class="dropdown">
+            <button onclick="toggleMenu()" class="dropbtn">
+                <span class="bar"></span><span class="bar"></span>
+                <span class="bar"></span><span class="bar"></span>
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="consulting.html">Consulting</a>
+                <a href="artificial.html">Mathilde AI</a>
+                <a href="softwares.html">Logiciels</a>
+                <a href="tubprotect.html">TubProtect</a>
+            </div>
+        </div>
+
+        <div class="flags">
+    <a href="softwares.html"><img src="images/fr.png" alt="FR"></a>
+    <a href="softwares-en.html"><img src="images/en.png" alt="EN"></a>
+    <a href="softwares-es.html"><img src="images/es.png" alt="ES"></a>
+</div>
+
+
+    </div>
+
+    <div class="menu-links">
+        <a href="index.html">Accueil</a>
+        <a href="parcours.html">Parcours</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+</div>
+
+<!-- ===== CONTENU ===== -->
+<div class="section-container">
+
+    <h1 class="page-title">Logiciels et automatisations</h1>
+    <div class="subtitle">
+        ViniSystems est également un ensemble de solutions informatisées personnalisées pour simplifier la gestion de vos données et le raisonnement de votre domaine. Je les ai pensé au cours de mes expérience à l'image de ce qui m'aurait facilité la vie et fait gagné du temps pendant mes missions.
+    </div>
+
+    <!-- ===== MATHWINEAPP ===== -->
+    <div class="category">
+        <div class="category-text">
+            <div class="category-title">ViniSystems Management App</div>
+            ViniSystems App est une application disponible sur ordinateur et sur téléphone regroupant un ensemble d'outils ajoutés sur demande pour s'adapter à vos besoins. Elle a pour but de centraliser création et gestion de données tout en évitant les erreurs humaines et les pertes d'informations avec une interface accueillante et facile à manipuler.
+        </div>
+
+        <div class="category-box">
+            <p>
+            On oublie : <br>
+                - La recherche de la quantité d'acide tartrique qu'on avait ajouté pendant les vendanges parmi tous les rapports d'analyses ou fichiers excels et qui n'a peut-être d'ailleurs pas été écrite ; <br>
+                - Les dégustations de dernière minute qui ne permettent pas se concentrer sur les attributs pertinents et qui finissent par une perte des informations précieuses au prochain millésime ; <br>
+                - La recherche urgente du manuel de la tireuse ou du filtre perdu quelque part, pour au final que ce soit un casse tête de résoudre le problème parce que les instructions ne sont jamais assez claires ; <br>
+                - "J'ai sulfité cette barrique ?" "Quelle quantité j'avais mis?" "C'était quand?" ; <br>
+                - Les doses de produits calculées rapidement sans laisser de trace. <br>
+                </p>
+            <a href="contact.html" class="btn">En savoir plus</a>
+        </div>
+    </div>
+
+    <div class="decorative-line"></div>
+
+    <!-- ===== MATHWINETRAZABILITY ===== -->
+    <div class="category">
+        <div class="category-text">
+            <div class="category-title">ViniSystems Traceability</div>
+            ViniSystems Traceability est un logiciel de traçabilité disponible sur ordinateur regroupant uniquement les fonctionnalités dont vous avez besoin, 
+            pour vous garantir une prise en main simple tout en vous permettant de suivre vos vins et répondre aux exigences de la règlementation. Une solution destinée aux petits domaines pour leur apporter une solution complète, personnalisable avec une prise en main facilité par rapport à des logiciels plus conséquents destinés principalement aux grands domaines.
+            <br><br>
+            <i>ViniSystems Traceability est encore en construction, une première version sera disponible prochainement.</i>
+        </div>
+
+        <div class="category-box">
+            <p>
+            On oublie : <br>
+            - La multiplicité des fichiers excels de suivi de traçabilité qui rendent l'information compliquée à retrouver ; <br>
+            - La dispersion des informations : analyses, transferts, ajouts de produits, suivi de fermentation, tout est centralisé. <br>
+            <br><br>
+            Mais ça, c'est le but de tous les logiciels de traçabilité, je veux surtout : <br>
+            - Simplifier un outil souvent trop complexe pour les besoins des petits domaines ; <br>
+            - Intégrer des outils de gestion comme mon modèle de prédiction des problèmes de fermentation ; <br>
+            - Intégrer un maximum d'automatisation pour que l'entrée des données se fasse le plus rapidement possible. <br>
+            </p>
+            <a href="contact.html" class="btn">En savoir plus</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- ===== PIED DE PAGE ===== -->
+<footer>
+© 2025 ViniSystems | 
+<a href="legalmentions.html">Mentions légales et conditions générales de vente</a> | 
+<a href="confidentiality.html">Politique de confidentialité</a> | 
+<a href="resiliation.html">Contrats et résiliation</a>
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.closest('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                dropdowns[i].classList.remove('show');
+            }
+        }
+    }
+</script>
+
+</body>
+</html> 
