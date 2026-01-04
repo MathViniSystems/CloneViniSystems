@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViniSystems</title>
+    <!-- Police pour titres et corps -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        /* ===== Palette de couleurs ===== */
+        :root {
+            --header-bg: #ECECEC; /* gris blanc cassé */
+            --text-color: #000000;
+            --accueil-bg: #FFF8E1; /* jaune nude */
+            --consulting-bg: #D2B48C; /* marron clair */
+            --ai-bg: #3C3F42; /* gris anthracite */
+            --softwares-bg: #2A6F78; /* bleu canard léger */
+            --physical-bg: #FFF8E1; /* même que accueil */
+            --btn-bg: #ECECEC; /* gris blanc cassé */
+            --btn-hover: #DADADA;
+            --shadow-color: rgba(0,0,0,0.15);
+        }
+
+        /* ===== Global ===== */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--physical-bg);
+            color: var(--text-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ===== Entête ===== */
+        .menu-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: var(--header-bg);
+            box-shadow: 0 4px 10px var(--shadow-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        /* Groupe Gauche (Menu + Drapeaux) */
+        .left-header-group {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Espace entre le menu et les drapeaux */
+        }
+
+        /* --- Style du Menu Déroulant --- */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Bouton Menu Burger (4 traits) */
+        .dropbtn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 24px; /* Ajusté pour 4 traits */
+        }
+
+        .dropbtn .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            border-radius: 2px;
+            display: block;
+        }
+
+        /* Contenu du menu (caché par défaut) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 140%; /* Un peu plus bas que le bouton */
+            left: 0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            font-size: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: #990000;
+        }
+
+        /* Classe ajoutée par JS pour afficher le menu */
+        .show {
+            display: block;
+        }
+        /* ------------------------------ */
+
+        .menu-links a {
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .menu-links a:hover {
+            color: #990000;
+        }
+
+        .flags img {
+            width: 30px;
+            margin-left: 10px;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+
+        /* ===== Section accueil ===== */
+        #main-section {
+            background-color: var(--accueil-bg);
+            text-align: left;
+            padding: 80px 20px;
+            box-shadow: 0 6px 15px var(--shadow-color);
+        }
+
+        #main-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--text-color);
+            margin-bottom: 25px;
+        }
+
+        #main-section p {
+            max-width: 900px;
+            margin: 0 auto 30px auto;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        #main-section .btn {
+            padding: 12px 25px;
+            font-weight: bold;
+            border-radius: 6px;
+            background-color: var(--btn-bg);
+            color: var(--text-color);
+            box-shadow: 0 4px 8px var(--shadow-color);
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        #main-section .btn:hover {
+            background-color: var(--btn-hover);
+            transform: translateY(-3px);
+        }
+
+        /* ===== Sections Consulting, AI, Softwares ===== */
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 20px;
+            box-shadow: 0 6px 15px var(--shadow-color);
+            margin-bottom: 20px;
+            transition: transform 0.4s;
+            text-align: left; /* Alignement gauche par défaut */
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        section .btn {
+            padding: 12px 25px;
+            font-weight: bold;
+            border-radius: 6px;
+            background-color: var(--btn-bg);
+            color: var(--text-color);
+            box-shadow: 0 4px 8px var(--shadow-color);
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        section .btn:hover {
+            background-color: var(--btn-hover);
+            transform: translateY(-3px);
+        }
+
+        /* ===== Couleurs par section et ajustement alignement ===== */
+        #consulting { 
+            background-color: var(--consulting-bg); 
+            color: white; 
+            flex-direction: row; 
+            text-align: left;
+        }
+        
+        #ai { 
+            background-color: var(--ai-bg); 
+            color: white; 
+            flex-direction: row; 
+            text-align: left;
+        }
+        
+        #softwares { 
+            background-color: var(--softwares-bg); 
+            color: white; 
+            flex-direction: row; 
+            text-align: left;
+        }
+        
+        #physical { 
+            background-color: var(--physical-bg); 
+            text-align: left;
+            padding: 80px 20px; 
+            display: block; 
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 900px) {
+            section { 
+                flex-direction: column; 
+                text-align: left !important; 
+                align-items: flex-start; 
+            } 
+            section h2 { margin-bottom: 15px; }
+            section p { max-width: 100%; margin-bottom: 15px; }
+            section .btn { margin-top: 15px; }
+        }
+
+        /* ===== Pied de page ===== */
+        footer {
+            background-color: var(--header-bg);
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            box-shadow: 0 -4px 10px var(--shadow-color);
+        }
+
+        footer a {
+            margin: 0 10px;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #990000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== Entête ===== -->
+    <div class="menu-container">
+        
+        <!-- Groupe Gauche : Menu + Drapeaux -->
+        <div class="left-header-group">
+            <!-- Bouton Menu Déroulant -->
+            <div class="dropdown">
+                <button onclick="toggleMenu()" class="dropbtn" aria-label="Menu principal">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="consulting-en.html">Consulting</a>
+                    <a href="artificial-en.html">Mathilde AI</a>
+                    <a href="softwares-en.html">Softwares</a>
+                    <a href="tubprotect-en.html">TubProtect</a>
+                </div>
+            </div>
+
+            <!-- Drapeaux -->
+           <div class="flags">
+    <a href="index.html"><img src="images/fr.png" alt="FR"></a>
+    <a href="index-en.html"><img src="images/en.png" alt="EN"></a>
+    <a href="index-es.html"><img src="images/es.png" alt="ES"></a>
+</div>
+
+
+        </div>
+
+        <!-- Liens de droite -->
+        <div class="menu-links">
+            <a href="index-en.html">Home</a>
+            <a href="parcours-en.html">Background</a>
+            <a href="contact-en.html">Contact</a>
+        </div>
+    </div>
+
+    <!-- ===== Section Accueil ===== -->
+    <section id="main-section" style="background-color: var(--accueil-bg); padding: 80px 20px; box-shadow: 0 6px 15px var(--shadow-color);">
+    <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+        <h2>Simplify what can be simplified, automate what can be automated, save time, with rigour and without error.</h2>
+<p>
+    ViniSystems is a set of innovative services and tools designed to provide all wineries, regardless of their size, with an easier and more efficient way to manage their processes. The aim is to address several key challenges:
+</p>
+<ul>
+    <li>Ensuring compliance with ever-evolving regulations and maintaining traceability</li>
+    <li>Facilitating access to information and enabling continuous improvement</li>
+    <li>Guaranteeing quality through rigorous process management and identification of weak points</li>
+    <li>Providing automation solutions for repetitive tasks or those prone to human error</li>
+</ul>
+<div style="text-align: right; margin-top: 20px;">
+    <a href="parcours-en.html" class="btn">Discover my background and vision</a>
+</div>
+    </div>
+</section>
+
+    <!-- ===== Consulting ===== -->
+    <section id="consulting">
+        <div>
+            <h2>Consulting</h2>
+            <p>
+    My support modules based on my experience: I assist you with the drafting of your regulatory documents, the creation of protocols, the implementation of trials and tastings, wine and vineyard monitoring, and the identification of areas at risk of lacking quality control.
+</p>
+</div>
+<a href="consulting-en.html" class="btn">Services and deliverables</a>
+    </section>
+
+    <!-- ===== Mathilde AI ===== -->
+    <section id="ai">
+        <div>
+            <h2>Mathilde AI</h2>
+            <p>
+    My personalised artificial intelligence, built on the basis of my knowledge and working method: it proves to be a truly valuable tool that complements my support.
+</p>
+</div>
+<a href="artificial-en.html" class="btn">Discover Mathilde AI</a>
+    </section>
+
+    <!-- ===== Softwares ===== -->
+    <section id="softwares">
+        <div>
+            <h2>Softwares and automation</h2>
+            <p>
+    My customisable software and applications: I have created a set of digital solutions specifically designed to meet your needs and centralise your tools and data.
+</p>
+</div>
+<a href="softwares-en.html" class="btn">Discover the digital solutions</a>
+    </section>
+
+    <!-- ===== Solutions physiques ===== -->
+    <section id="physical">
+        <h2 style="font-size:24px;">Physical solutions</h2>
+<p style="font-size:14px;">In development</p>
+    </section>
+
+    <!-- ===== Pied de page ===== -->
+    <footer>
+© 2025 ViniSystems | 
+<a href="legalmentions-en.html">Legal notice and general terms of sale</a> | 
+<a href="confidentiality-en.html">Privacy policy</a> | 
+<a href="resiliation-en.html">Contracts and termination</a>
+</footer>
+
+    <!-- Script pour le menu déroulant -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.closest('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+
+</body>
+</html>
