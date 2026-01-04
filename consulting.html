@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prestations et services – ViniSystems</title>
+<!-- Police pour titres et corps -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
+<style>
+/* ===== Palette de couleurs (Récupérée de index.html) ===== */
+:root {
+    --header-bg: #ECECEC; /* gris blanc cassé */
+    --text-color: #000000;
+    --physical-bg: #FFF8E1; /* jaune nude */
+    --brown-box: #D2B48C; /* marron clair */
+    --btn-bg: #ECECEC; /* gris blanc cassé */
+    --btn-hover: #DADADA;
+    --shadow-color: rgba(0,0,0,0.15);
+}
+
+/* ===== Global ===== */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--physical-bg);
+    color: var(--text-color);
+}
+a { text-decoration: none; color: inherit; }
+
+/* ===== Entête (Récupéré de index.html) ===== */
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--header-bg);
+    box-shadow: 0 4px 10px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+/* Groupe Gauche (Menu + Drapeaux) */
+.left-header-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+/* --- Style du Menu Déroulant --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropbtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+}
+.dropbtn .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    display: block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 140%;
+    left: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    border-bottom: 1px solid #eee;
+}
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
+    color: #990000;
+}
+.show { display: block; }
+/* ------------------------------ */
+
+.menu-links a {
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.menu-links a:hover { color: #990000; }
+.flags img {
+    width: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+/* ===== Contenu principal de la page Prestations ===== */
+.section-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+.category {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+.category-text {
+    flex: 1;
+    font-size: 18px;
+    line-height: 1.7;
+}
+.category-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+.category-box {
+    width: 35%;
+    background-color: var(--brown-box);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px var(--shadow-color);
+    transition: transform 0.4s;
+    /* Mise en place de Flexbox en colonne pour les éléments enfants */
+    display: flex;
+    flex-direction: column;
+}
+.category-box p {
+    margin-bottom: 15px; /* Espace après le texte */
+    flex-grow: 1; /* Permet au paragraphe de prendre l'espace nécessaire avant les boutons */
+}
+.category-box:hover {
+    transform: translateY(-5px);
+}
+.decorative-line {
+    width: 80%;
+    height: 2px;
+    background-color: #d0d0d0;
+    margin: 30px auto;
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+.btn {
+    display: block; /* Chaque bouton prend sa propre ligne */
+    width: fit-content; /* Le bouton s'ajuste à son contenu */
+    margin-top: 10px; /* Moins d'espace entre les boutons qu'avec le texte */
+    padding: 10px 18px;
+    background-color: var(--btn-bg);
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    text-align: center;
+}
+.btn:first-of-type {
+    margin-top: 15px; /* Un peu plus d'espace pour le premier bouton après le texte */
+}
+.btn:hover {
+    background-color: var(--btn-hover);
+    transform: translateY(-3px);
+}
+
+/* ===== Pied de page (Récupéré de index.html) ===== */
+footer {
+    background-color: var(--header-bg);
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 -4px 10px var(--shadow-color);
+}
+footer a {
+    margin: 0 10px;
+    color: #333;
+    transition: color 0.3s;
+}
+footer a:hover {
+    color: #990000;
+}
+
+/* Responsive fiable pour mobile et tablette */
+@media (max-width: 1024px) {
+
+    /* Mise en colonne */
+    .category {
+        flex-direction: column !important;
+        align-items: center !important; /* centre tout */
+        gap: 25px !important;
+        width: 100% !important;
+    }
+
+    /* Ordre : texte en premier, cadre en second */
+    .category-text {
+        order: 1 !important;
+        width: 100% !important;
+        text-align: left !important;
+    }
+
+    .category-box {
+        order: 2 !important;
+        width: 100% !important;
+        margin: 0 auto !important; /* centre le cadre */
+        box-sizing: border-box;
+    }
+
+    /* Boutons bien contenus */
+    .category-box .btn {
+        width: 100% !important;
+        text-align: center !important;
+        box-sizing: border-box;
+    }
+
+    /* Anti débordement horizontal */
+    body, html {
+        overflow-x: hidden !important;
+    }
+}
+
+
+    
+</style>
+</head>
+<body>
+
+<!-- ===== Entête (Identique à index.html) ===== -->
+<div class="menu-container">
+    
+    <!-- Groupe Gauche : Menu + Drapeaux -->
+    <div class="left-header-group">
+        <!-- Bouton Menu Déroulant -->
+        <div class="dropdown">
+            <button onclick="toggleMenu()" class="dropbtn" aria-label="Menu principal">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="consulting.html">Consulting</a>
+                <a href="artificial.html">Mathilde AI</a>
+                <a href="softwares.html">Logiciels</a>
+                <a href="tubprotect.html">TubProtect</a>
+            </div>
+        </div>
+
+        <div class="flags">
+    <a href="consulting.html"><img src="images/fr.png" alt="FR"></a>
+    <a href="consulting-en.html"><img src="images/en.png" alt="EN"></a>
+    <a href="consulting-es.html"><img src="images/es.png" alt="ES"></a>
+</div>
+
+
+    </div>
+
+    <div class="menu-links">
+        <a href="index.html">Accueil</a>
+        <a href="parcours.html">Parcours</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
+
+<div class="section-container">
+    <h1 class="page-title">Prestations et services</h1>
+
+    <!-- CATEGORY 1 -->
+    <div class="category">
+        <div class="category-text">
+            <div class="category-title">Mise à jour de vos documents règlementaires</div> 
+            La règlementation européenne impose certains documents pour garantir les bonnes pratiques et la sécurité dans les domaines viticoles, ils doivent être actualisés chaque année et attestent la qualité de votre travail et de votre environnement de travail : <br> - Un plan HACCP (Hazard Analisis Critical Control Point) : obligatoire pour tous les domaines produisant du vin destiné à la vente, il garantit la sécurité sanitaire des produits mis sur le marché en évitant tout risque pouvant nuire à la santé du consommateur. <br> - Un DUER (Document Unique d’Evaluation des Risques Professionnels) : obligatoire à partir du moment où vous avez au moins un salarié à un moment de l’année, il garantit leur sécurité sur le lieu de travail. <br><br> Ces documents sont normés et doivent être construits avec des catégories imposées par la règlementation et avec la plus grande précision possible pour garantir sécurité et protection de vos produits, salarié et de vous-même. 
+        </div>
+        <div class="category-box">
+            <p>Dans la majorité des caves où je suis passée, je faisais face à l’absence de documents règlementaires ou au mieux, à leur absence d’actualisation depuis plusieurs années. Des documents qui ne sont pas à jour ou imprécis c’est : <br> - Une potentielle non maîtrise de la qualité de vos produits. <br> - Une mise en danger de vos salariés. <br> - Un risque juridique et financier très élevé pour vous en cas de problème
+</p>
+            <a href="contact.html" class="btn">Me contacter pour la rédaction</a>
+        </div>
+    </div>
+    <div class="decorative-line"></div>
+
+    <!-- CATEGORY 2 -->
+    <div class="category">
+        <div class="category-text">
+            <div class="category-title">Rédaction de protocoles, systèmes d’automatisation</div>
+            Vous travaillez sûrement avec des machines spécifiques, complexes, ajustées selon vos besoins. Vous travaillez sûrement avec vos systèmes de calculs, de stockage de données, de traçabilité. Êtes-vous certains que ces systèmes sont optimisés, répétables, adaptés et fiables ? <br> - Je rédige des protocoles de fonctionnement de vos machines (chaîne d’embouteillage, filtre, analyseur…) avec une précision exemplaire de manière à ce que n’importe qui soit capable de faire fonctionner votre machine, sans faire d’erreurs, et sans se tromper dans vos réglages personnalisés. <br> - Je vous propose des solutions visant à vous simplifier la vie en automatisant des actions répétitives et sujettes à l’erreur humaine (calcul des doses de produits, suivi des fermentations…). <br> - J’ai réuni l'ensemble de vos outils dans une application personnalisable.
+
+        </div>
+        <div class="category-box">
+            <p>On ne s’en rend pas toujours compte, mais souvent on perd du temps tous les jours pour des détails qui pourraient être automatisés ou protocolisés : <br> - Et si le seul salarié qui maîtrise parfaitement une machine complexe est indisponible lorsque vous êtes dans l’urgence ? <br> - Et si vous aviez des outils qui automatisent vos calculs et facilitent vos prises de décision pour vous faire gagner du temps et de la sécurité ? </p>
+            <!-- Les boutons s'affichent en colonne grâce au display: block et flex-direction: column sur category-box -->
+            <a href="contact.html" class="btn">Me contacter</a>
+            <a href="softwares.html" class="btn">Découvrir mes logiciels</a>
+        </div>
+    </div>
+    <div class="decorative-line"></div>
+
+    <!-- CATEGORY 3 -->
+    <div class="category">
+        <div class="category-text">
+            <div class="category-title">Mise en place d’essais et analyses sensorielles</div>
+            Avant d’investir dans une nouvelle manière de vinifier, un changement dans votre process de vinification ou vos paramètres, un cépage nouveau, il peut-être intéressant de faire un essai à petite échelle. C’est un réel pilier d’innovation et d’amélioration si il est bien maîtrisé. <br> - Un essai mal organisé ne vous garantit pas que vos résultats soient corrects et extrapolables. <br> - Un essai doit être associé à un choix de paramètres à récolter et à une méthode de récolte cohérents pour arriver à votre finalité. <br> - Les données issues de votre essai doivent être analysées avec les bonnes méthodes statistiques pour parler avec fiabilité. <br> - Un essai est inévitablement associé à des limites liées à la méthode et à l’extrapolation, qu’il faut comprendre pour le transposer correctement à échelle réelle. 
+
+        </div>
+        <div class="category-box">
+            <p>J’ai remarqué que beaucoup de petits et moyens domaines pensent que faire des essais leur est hors de porté, et que d’autres essaient d’en réaliser mais se heurtent à la rigueur que cela impose :<br> - Il est faux de croire qu’un essai est lié à des coûts importants, il peut être adapté à vos moyens et il vous évitera des erreurs et des pertes futures. <br> - Il est faux de croire qu’un essai est difficile à réaliser, il peut être pensé, piloté, analysé puis interprété à distance sans que vous ayez besoin d’une personne qualifiée sur place. </p>
+            <a href="contact.html" class="btn">Me contacter</a>
+        </div>
+    </div>
+    <div class="decorative-line"></div>
+
+    <!-- CATEGORY 4 -->
+    <div class="category">
+        <div class="category-text">
+            <div class="category-title">Audit qualité, formation, restructuration</div>
+            Au sein d’un domaine, chaque détail compte, une négligence, un oubli, une erreur peut conduite à la perte d’une année de travail et d’investissement. Parfois même, on en observe les conséquences sur la vigne ou le vin mais on n’arrive pas à identifier la cause exacte du problème, et on prend le risque de répéter les mêmes erreurs l’année suivant. <br> - Les choix doivent être cohérents par rapport à l’ensemble du process, soit en prenant en compte ce qui a été fait par le passé et en considérant ce qui sera fait à l'avenir. <br> - Le matériel et les machines doivent être correctement utilisés. <br> - Et surtout, les analyses doivent être maîtrisées.
+        </div>
+        <div class="category-box">
+            <p>Au cours de mes expériences et visites, j’ai eu l’opportunité d’identifier de nombreux points de non maîtrise de la qualité : protocole de nettoyage inefficace, utilisation incohérente des produits œnologiques, mauvaises méthodes de prélèvement, analyses faussées, fertilisation injustifiée, taille non maîtrisée… Face à cela il est essentiel de : <br> - Former et informer sur l’évolution des connaissances scientifiques et les nouvelles découvertes allant parfois à l’encontre des croyances plus anciennes. <br> - Restructurer les process, l’environnement, les méthodes, les protocoles pour aboutir à de la cohérence et éviter les risques. </p>
+            <a href="contact.html" class="btn">Me contacter</a>
+        </div>
+    </div>
+    <div class="decorative-line"></div>
+
+    <!-- CATEGORY 5 -->
+    <div class="category">
+        <div class="category-text">
+            <div class="category-title">Suivi des vins, du moût à la mise</div>
+            Le suivi de vos vins est essentiel, que ce soit au cours des vinifications pour piloter le profil et identifier les défauts le plus rapidement possible, pendant l’élevage pour éviter toute déviation jusqu’aux assemblages précédant la mise en bouteille.
+        </div>
+        <div class="category-box">
+            <p> Je propose également mes services de manière plus classique dans le suivi des vins avec une attention particulière sur l'identification des défauts et la recherche de solutions. <br> <br> Je vous accompagne aussi dans le suivi et l’analyse à distance de vos données de dégustation et de vos analyses. Vous pouvez même obtenir un conseil dans la seconde, quelque soit l’heure ou le jour, à l’aide de mon assistante virtuelle, construite sur la base de mes connaissances.</p>
+            <a href="contact.html" class="btn">Me contacter</a>
+            <a href="artificial.html" class="btn">Découvrir Mathilde AI</a>
+        </div>
+    </div>
+</div>
+
+<!-- ===== Pied de page (Identique à index.html) ===== -->
+<footer>
+© 2025 ViniSystems | 
+<a href="legalmentions.html">Mentions légales et conditions générales de vente</a> | 
+<a href="confidentiality.html">Politique de confidentialité</a> | 
+<a href="resiliation.html">Contrats et résiliation</a>
+</footer>
+
+<!-- Script pour le menu déroulant (Identique à index.html) -->
+<script>
+    function toggleMenu() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Fermer le menu si on clique ailleurs
+    window.onclick = function(event) {
+        // Vérifie si le clic n'est PAS sur le bouton du menu burger (dropbtn)
+        if (!event.target.closest('.dropbtn')) { 
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+
+</body>
+</html> 
